@@ -8,18 +8,19 @@
 オブジェクトからプロパティ値を設定し、showNameメソッドを呼び出して出力すること -->
 <?php
 
+echo "第一問<br>";
+
 $kid = new Kid();
 
-$car->setName('Shunya');
-$car->setSex('Boy'));
+$kid->setName('Shunya');
+$kid->setSex('girl');
 
-$kid=>showname();
+
+$kid->showname();
 
 class Kid{
-    public $name;
-    public $sex;
-
-
+    private $name;
+    private $sex;
 
 function __construct(){
     $this->name = 'Seed';
@@ -34,12 +35,28 @@ function __construct(){
         return $this->name;
     }
 
-    function showname(){
-        if (condition) {
-            # code...
-        }
+    public function setSex($seibetu){
+        $this->sex=$seibetu;
+            }
+
+    public function getSex(){
+        return $this->sex;
     }
 
+    function showname(){
+        if ($this->sex=='boy') {
+        echo "$this->name"."くん";
+        }
+        elseif ($this->sex=='girl') {
+        echo "$this->name"."ちゃん";
+        }
+        else {
+        echo "boyかgirlを選んでください";
+        }
+
+    }
+
+// 演習問題１で作成したKidクラスに、初期値「10」の「年齢（$age）」プロパティも追加して、12歳以上なら「○○君／○○さん」と出力されるようにしてください。
 
 
 
