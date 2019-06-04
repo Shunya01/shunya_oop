@@ -10,8 +10,8 @@
 
 $kid = new Kid();
 
-$car->setName(Shunya);
-$car->setSex(Boy));
+$car->setName('Shunya');
+$car->setSex('Boy'));
 
 $kid=>showname();
 
