@@ -8,12 +8,12 @@
 オブジェクトからプロパティ値を設定し、showNameメソッドを呼び出して出力すること -->
 <?php
 
-echo "第一問<br>";
-
 $kid = new Kid();
 
 $kid->setName('Shunya');
 $kid->setSex('girl');
+//第二問
+$kid->setAge(1);
 
 
 $kid->showname();
@@ -43,16 +43,39 @@ function __construct(){
         return $this->sex;
     }
 
+    //第二問
+    public function setAge($nenrei){
+        $this->age=$nenrei;
+            }
+
+    public function getAge(){
+        return $this->age;
+    }
+
+
+    //第二問
     function showname(){
-        if ($this->sex=='boy') {
+        if ($this->age>150 || $this->age<0) {
+        echo "年齢が適切ではありません";
+        }
+
+        elseif ($this->sex=='boy' && $this->age<12) {
         echo "$this->name"."くん";
         }
-        elseif ($this->sex=='girl') {
+
+        elseif ($this->sex=='boy' && $this->age>=12) {
+        echo "$this->name"."君";
+        }
+
+        elseif ($this->sex=='girl' && $this->age<12) {
         echo "$this->name"."ちゃん";
         }
-        else {
+
+        elseif ($this->sex!='girl' && $this->sex!='boy') {
         echo "boyかgirlを選んでください";
         }
+
+       
 
     }
 
