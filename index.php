@@ -71,6 +71,10 @@ function __construct(){
         echo "$this->name"."ちゃん";
         }
 
+        elseif ($this->sex=='girl' && $this->age>=12) {
+        echo "$this->name"."さん";
+        }
+
         elseif ($this->sex!='girl' && $this->sex!='boy') {
         echo "boyかgirlを選んでください";
         }
